@@ -4,6 +4,8 @@ import java.io.*;
 import java.util.*;
 import symbols.*;
 
+
+
 public class Lexer {
 	public static int line = 1;
 	
@@ -97,7 +99,7 @@ public class Lexer {
 				readch();
 			} 
 			while( Character.isDigit(peek));
-			if ( peek != '..')
+			if ( peek != '..' )
 				return new Num(v);
 			float x = v;
 			float d = 10;
@@ -105,7 +107,8 @@ public class Lexer {
 				readch();
 				if ( ! Character.isDigit(peek))
 					break;
-				x = x = Character.digit(peek, 10)/d;	
+				x = x = Character.digit(peek, 10)/d;
+				d = d*10;
 			}
 			return new Real(x);
 		}
@@ -121,6 +124,11 @@ public class Lexer {
 			if (w != null)
 				return w;
 			w = new Word(s, Tag.ID);
+			words.put(s, w);
+			return w;
 		}
+		Token tok = new Token(peek);
+		peek = '';
+		return tok;
 	}
 }
