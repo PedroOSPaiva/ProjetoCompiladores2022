@@ -20,6 +20,7 @@ public class Type extends Word {
 	public static boolean numeric(Type p) {
 		if (p == Type.Char || p == Type.Int || p == Type.Float)
 			return true;
+		else return false;
 	}
 	
 	public static Type max(Type p1, Type p2) {

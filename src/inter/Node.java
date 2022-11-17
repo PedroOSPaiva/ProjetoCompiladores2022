@@ -15,7 +15,7 @@ public class Node {
 	
 	static int labels = 0;
 	
-	public int new label(){
+	public int newlabel(){
 		return  ++labels;
 	}
 	public  void emitlabel(int i) {
@@ -23,7 +23,7 @@ public class Node {
 	}
 	
 	public void emit (String s) {
-		System.out.println("\t" +s);
+		System.out.println("\t" + s);
 	}
 	
 }
